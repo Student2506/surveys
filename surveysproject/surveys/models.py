@@ -17,6 +17,8 @@ class Survey(models.Model):
                                    null=True,
                                    blank=True,
                                    help_text='Задайте описание')
+    author = models.ForeignKey(User, on_delete=models.CASCADE,
+                               related_name='surveys')
 
     class Meta:
         ordering = ('-start_date', )
