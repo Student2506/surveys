@@ -1,4 +1,5 @@
-from surveys.models import Survey, Question, Answer, User
+from surveys.models import (Survey, Question, Answer, User, Customer,
+                            SurveyInstance)
 from rest_framework import serializers
 
 
@@ -29,4 +30,18 @@ class UserSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = User
+        fields = '__all__'
+
+
+class CustomerSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = Customer
+        fields = '__all__'
+
+
+class SurveyISerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = SurveyInstance
         fields = '__all__'

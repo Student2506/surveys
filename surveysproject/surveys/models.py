@@ -1,5 +1,8 @@
+import uuid
+
 from django.db import models
 from django.contrib.auth import get_user_model
+from django.contrib.postgres.fields import JSONField
 
 User = get_user_model()
 
@@ -71,3 +74,34 @@ class Answer(models.Model):
 
     def __str__(self):
         return self.text[:15]
+
+
+class Customer(models.Model):
+    first_name = models.CharField(
+        'Имя пользователя',
+        max_length=20,
+        null=True,
+        blank=False
+    )
+    last_name = models.CharField(
+        'Фамилия пользователя',
+        max_length=20,
+        null=True,
+        blank=False
+    )
+    id = models.UUIDField(
+        primary_key=True,
+        default=uuid.uuid4,
+        editable=False
+    )
+
+
+class SurveyInstance(models.Model):
+    id = models.UUIDField(
+        primary_key=True,
+        default=uuid.uuid4,
+        editable=False
+    )
+    survey_id = models.ForeignKey(Survey, on_delete=models.CASCADE)
+    user_id = models.ForeignKey(Customer, on_delete=models.CASCADE)
+    results = JSONField()

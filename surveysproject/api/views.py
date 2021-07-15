@@ -1,9 +1,10 @@
 from django.shortcuts import get_object_or_404
 from rest_framework import viewsets
 
-from surveys.models import Survey, Question, Answer, User
+from surveys.models import Survey, Question, Answer, User, Customer, SurveyInstance
 from .serializers import (AnswerSerializer, QuestionSerializer,
-                          SurveySerializer, UserSerializer)
+                          SurveySerializer, UserSerializer,
+                          CustomerSerializer, SurveyISerializer)
 
 
 class SurveyViewSet(viewsets.ModelViewSet):
