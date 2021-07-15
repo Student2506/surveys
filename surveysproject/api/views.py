@@ -45,3 +45,13 @@ class AnswerViewSet(viewsets.ModelViewSet):
 class UserViewSet(viewsets.ModelViewSet):
     queryset = User.objects.all()
     serializer_class = UserSerializer
+
+
+class CustomerViewSet(viewsets.ModelViewSet):
+    queryset = Customer.objects.all()
+    serializer_class = CustomerSerializer
+
+
+class SurveyInstanceViewSet(viewsets.ModelViewSet):
+    queryset = SurveyInstance.objects.all()
+    serializer_class = SurveyISerializer
