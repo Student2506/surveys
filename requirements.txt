@@ -18,10 +18,14 @@ mixer==7.1.2
 more-itertools==8.2.0
 packaging==20.1
 parso==0.8.2
+pexpect==4.8.0
 pickleshare==0.7.5
 Pillow==7.0.0
 pluggy==0.13.1
 prompt-toolkit==3.0.19
+psycopg2==2.7.7
+psycopg2-binary==2.9.1
+ptyprocess==0.7.0
 py==1.8.1
 Pygments==2.9.0
 pyparsing==2.4.6
